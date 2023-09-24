@@ -1,0 +1,15 @@
+<div class="mb-3 p-3">
+  <label for="input" class="form-label">What do you want to discover?</label>
+  <input type="email" class="form-control" id="input" [(ngModel)]="searchText">
+  <button type="button" class="btn btn-primary mt-2" (click)="getResults()">Search</button>
+</div>
+
+<div class="card-group">
+  <div class="card" *ngFor="let result of results">
+    <img [src]="result.image" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"> {{ result.title}}</h5>
+      <p class="card-text"> {{ result.description }}</p>
+    </div>
+  </div>
+</div>
